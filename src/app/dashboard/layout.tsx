@@ -1,7 +1,10 @@
+'use client'
+
 import Navbar from "@/components/Navbar"
 import Sidebar from "@/components/Sidebar"
+import { useSession } from "next-auth/react"
 
-export default function layout({
+export default function DashbaordLayout({
     children,
 }: {
     children: React.ReactNode
@@ -12,7 +15,6 @@ export default function layout({
             <div className="ml-64">
                 <Navbar />
                 <div className="p-4">
-                    {/* dashbord content */}
                     {children}
                 </div>
             </div>

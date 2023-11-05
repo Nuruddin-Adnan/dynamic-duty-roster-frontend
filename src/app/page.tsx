@@ -34,8 +34,7 @@ export default function Home() {
         <h2 className="text-2xl font-semibold mb-4 text-center">Get Started Today</h2>
         <p className="mb-4 text-center">Sign up now and experience the power of our dynamic duty roster application.</p>
         <div className="flex justify-center">
-          <Link href="/generate-roster" className="bg-blue-600 text-white py-3 px-6 rounded-full text-xl hover:bg-blue-700 hover:shadow-md transition duration-300 ease-in-out">Generate Duty Roster</Link>
-          <Link href='/dashboard'>Dashboard</Link>
+          <Link href="/dashboard" className="bg-blue-600 text-white py-3 px-6 rounded-full text-xl hover:bg-blue-700 hover:shadow-md transition duration-300 ease-in-out">Generate Duty Roster</Link>
         </div>
       </section>
       <footer className="text-center text-gray-600 mt-8">
