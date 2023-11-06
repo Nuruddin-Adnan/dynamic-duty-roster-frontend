@@ -5,6 +5,7 @@ import CredentialsProvider from "next-auth/providers/credentials";
 
 export const authOptions: AuthOptions = {
   // Configure one or more authentication providers
+
   providers: [
     CredentialsProvider({
       // id: "your app name",
@@ -30,9 +31,7 @@ export const authOptions: AuthOptions = {
             data?.accessToken,
             process.env.JWT_SECRET!
           );
-          // console.log(data, "auth option")
           if (res.ok && data) {
-            // console.log(verifiedToken);
             return {
               ...data,
               ...verifiedToken,

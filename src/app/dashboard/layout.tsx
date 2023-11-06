@@ -10,10 +10,12 @@ export default function DashbaordLayout({
     children: React.ReactNode
 }) {
     return (
-        <main className="bg-gray-100 h-screen">
+        <main className="bg-gray-100 min-h-screen">
             <Sidebar />
             <div className="ml-64">
-                <Navbar />
+                <div className="sticky top-0">
+                    <Navbar />
+                </div>
                 <div className="p-4">
                     {children}
                 </div>
