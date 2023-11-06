@@ -1,5 +1,4 @@
 import React from 'react'
-import EditDepartmentForm from '../components/EditDesignationForm';
 import { designationService } from '@/services/designation/designation.service';
 import EditDesignationtForm from '../components/EditDesignationForm';
 

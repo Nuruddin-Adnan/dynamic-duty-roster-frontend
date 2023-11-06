@@ -2,7 +2,6 @@
 import React from 'react'
 import revalidateByTag from '@/services/revalidateByTag'
 import Link from 'next/link'
-import { departmentService } from '@/services/department/department.service'
 import { designationService } from '@/services/designation/designation.service'
 
 export default function DesignationTableAction({ id }: { id: string }) {

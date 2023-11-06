@@ -1,6 +1,7 @@
 'use client'
 
 import { departmentService } from "@/services/department/department.service";
+import { designationService } from "@/services/designation/designation.service";
 import revalidateByTag from "@/services/revalidateByTag";
 import { useRouter } from "next/navigation";
 
@@ -19,13 +20,13 @@ export default function CreateDepartmentPage() {
         }
 
         try {
-            const result = await departmentService.createDepartment(FormDataObject)
+            const result = await designationService.createDesignation(FormDataObject)
             if (result.success === false) {
                 alert('something went wrong');
                 return false;
             }
-            await revalidateByTag('/dashboard/department');
-            router.push('/dashboard/department')
+            await revalidateByTag('/dashboard/designation');
+            router.push('/dashboard/designation')
         } catch (e) {
             return { message: 'Failed to create' }
         }

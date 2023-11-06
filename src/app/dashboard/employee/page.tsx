@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import React from 'react'
-import EmployeeAction from './components/EmployeeTableAction';
 import getEmployees from '@/services/employee/getEmployees';
 import EmployeeTableAction from './components/EmployeeTableAction';
 

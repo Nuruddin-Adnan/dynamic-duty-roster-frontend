@@ -5,7 +5,7 @@ import { usePathname } from 'next/navigation'
 import Link from "next/link";
 import { AiOutlineDashboard, AiOutlineBranches } from 'react-icons/ai';
 import { BsPeople } from 'react-icons/bs';
-import { GiRank3 } from 'react-icons/gi';
+import { GiRank3, GiRadarCrossSection } from 'react-icons/gi';
 import { SiWorkplace } from 'react-icons/si';
 
 export default function Sidebar() {
@@ -45,6 +45,12 @@ export default function Sidebar() {
                         <Link href="/dashboard/workstation" className={`link flex items-center py-2 px-4 hover:bg-blue-600 ${pathname === '/dashboard/workstation' ? 'active' : ''}`}>
                             <span className="mr-2"><SiWorkplace /></span>
                             Workstation
+                        </Link>
+                    </li>
+                    <li>
+                        <Link href="/dashboard/employee-required" className={`link flex items-center py-2 px-4 hover:bg-blue-600 ${pathname === '/dashboard/employee-required' ? 'active' : ''}`}>
+                            <span className="mr-2"><GiRadarCrossSection /></span>
+                            Employee Required
                         </Link>
                     </li>
 

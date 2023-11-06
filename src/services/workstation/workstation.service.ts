@@ -47,8 +47,6 @@ async function deleteWorkstation(id: any) {
     method: "DELETE",
   });
 
-  const x = process.env.NEXTAUTH_SECRET;
-
   return res.json();
 }
 
