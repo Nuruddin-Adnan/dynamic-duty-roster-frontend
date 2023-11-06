@@ -1,6 +1,6 @@
 async function createDesignation(payload: any) {
   const res = await fetch(
-    `http://localhost:5000/api/v1/designations/create-designation`,
+    `https://dynamic-duty-roster-backend.vercel.app/api/v1/designations/create-designation`,
     {
       method: "POST",
       headers: { "content-type": "application/json" },
@@ -13,7 +13,7 @@ async function createDesignation(payload: any) {
 
 async function getAllDesignations(query: string = "") {
   const res = await fetch(
-    `http://localhost:5000/api/v1/designations/?${query}`,
+    `https://dynamic-duty-roster-backend.vercel.app/api/v1/designations/?${query}`,
     {
       cache: "no-store",
       next: { tags: ["designation"] },
@@ -24,28 +24,37 @@ async function getAllDesignations(query: string = "") {
 }
 
 async function getSingleDesignation(id: any) {
-  const res = await fetch(`http://localhost:5000/api/v1/designations/${id}`, {
-    cache: "no-store",
-    next: { tags: ["designation"] },
-  });
+  const res = await fetch(
+    `https://dynamic-duty-roster-backend.vercel.app/api/v1/designations/${id}`,
+    {
+      cache: "no-store",
+      next: { tags: ["designation"] },
+    }
+  );
 
   return res.json();
 }
 
 async function updateDesignation(id: any, payload: any) {
-  const res = await fetch(`http://localhost:5000/api/v1/designations/${id}`, {
-    method: "PATCH",
-    headers: { "content-type": "application/json" },
-    body: JSON.stringify(payload),
-  });
+  const res = await fetch(
+    `https://dynamic-duty-roster-backend.vercel.app/api/v1/designations/${id}`,
+    {
+      method: "PATCH",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify(payload),
+    }
+  );
 
   return res.json();
 }
 
 async function deleteDesignation(id: any) {
-  const res = await fetch(`http://localhost:5000/api/v1/designations/${id}`, {
-    method: "DELETE",
-  });
+  const res = await fetch(
+    `https://dynamic-duty-roster-backend.vercel.app/api/v1/designations/${id}`,
+    {
+      method: "DELETE",
+    }
+  );
 
   return res.json();
 }

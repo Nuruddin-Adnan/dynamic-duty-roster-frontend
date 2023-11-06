@@ -1,6 +1,6 @@
 async function createEmployeeRequired(payload: any) {
   const res = await fetch(
-    `http://localhost:5000/api/v1/employee-required/create-employee-required`,
+    `https://dynamic-duty-roster-backend.vercel.app/api/v1/employee-required/create-employee-required`,
     {
       method: "POST",
       headers: { "content-type": "application/json" },
@@ -13,7 +13,7 @@ async function createEmployeeRequired(payload: any) {
 
 async function getAllEmployeeRequireds(query: string = "") {
   const res = await fetch(
-    `http://localhost:5000/api/v1/employee-required/?${query}`,
+    `https://dynamic-duty-roster-backend.vercel.app/api/v1/employee-required/?${query}`,
     {
       cache: "no-store",
       next: { tags: ["employee-required"] },
@@ -25,7 +25,7 @@ async function getAllEmployeeRequireds(query: string = "") {
 
 async function getSingleEmployeeRequired(id: any) {
   const res = await fetch(
-    `http://localhost:5000/api/v1/employee-required/${id}`,
+    `https://dynamic-duty-roster-backend.vercel.app/api/v1/employee-required/${id}`,
     {
       cache: "no-store",
       next: { tags: ["employee-required"] },
@@ -37,7 +37,7 @@ async function getSingleEmployeeRequired(id: any) {
 
 async function updateEmployeeRequired(id: any, payload: any) {
   const res = await fetch(
-    `http://localhost:5000/api/v1/employee-required/${id}`,
+    `https://dynamic-duty-roster-backend.vercel.app/api/v1/employee-required/${id}`,
     {
       method: "PATCH",
       headers: { "content-type": "application/json" },
@@ -50,7 +50,7 @@ async function updateEmployeeRequired(id: any, payload: any) {
 
 async function deleteEmployeeRequired(id: any) {
   const res = await fetch(
-    `http://localhost:5000/api/v1/employee-required/${id}`,
+    `https://dynamic-duty-roster-backend.vercel.app/api/v1/employee-required/${id}`,
     {
       method: "DELETE",
     }

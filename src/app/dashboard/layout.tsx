@@ -2,7 +2,6 @@
 
 import Navbar from "@/components/Navbar"
 import Sidebar from "@/components/Sidebar"
-import { useSession } from "next-auth/react"
 
 export default function DashbaordLayout({
     children,

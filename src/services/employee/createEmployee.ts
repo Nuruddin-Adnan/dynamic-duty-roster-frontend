@@ -1,6 +1,6 @@
 export default async function createEmployee(payload: any) {
   const res = await fetch(
-    `http://localhost:5000/api/v1/employees/create-employee`,
+    `https://dynamic-duty-roster-backend.vercel.app/api/v1/employees/create-employee`,
     {
       method: "POST",
       headers: { "content-type": "application/json" },
