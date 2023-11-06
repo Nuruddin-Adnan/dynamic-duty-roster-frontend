@@ -20,11 +20,6 @@ async function getAllDepartments(query: string = "") {
     }
   );
 
-  if (!res.ok) {
-    // This will activate the closest `error.js` Error Boundary
-    throw new Error("Fail to fetch data");
-  }
-
   return res.json();
 }
 
@@ -34,9 +29,6 @@ async function getSingleDepartment(id: any) {
     next: { tags: ["employee"] },
   });
 
-  if (!res.ok) {
-    throw new Error("Failed to get data");
-  }
   return res.json();
 }
 
@@ -46,10 +38,6 @@ async function updateDepartment(id: any, payload: any) {
     headers: { "content-type": "application/json" },
     body: JSON.stringify(payload),
   });
-
-  if (!res.ok) {
-    throw new Error("Failed to update data");
-  }
 
   return res.json();
 }

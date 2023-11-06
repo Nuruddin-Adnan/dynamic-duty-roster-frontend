@@ -1,6 +1,6 @@
 import getSingleEmployee from '@/services/employee/getSingleEmployee'
 import React from 'react'
-import EditEmployeeForm from '../component/EditEmployeeForm';
+import EditEmployeeForm from '../components/EditEmployeeForm';
 import { designationService } from '@/services/designation/designation.service';
 import { departmentService } from '@/services/department/department.service';
 

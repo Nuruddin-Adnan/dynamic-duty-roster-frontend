@@ -1,6 +1,6 @@
 import { departmentService } from '@/services/department/department.service';
 import { designationService } from '@/services/designation/designation.service';
-import CreateEmployeeForm from '../component/CreateEmployeeForm';
+import CreateEmployeeForm from '../components/CreateEmployeeForm';
 
 export default async function CreateEmployeePage() {
     const designationsData = designationService.getAllDesignations();

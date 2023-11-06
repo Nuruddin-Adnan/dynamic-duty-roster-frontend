@@ -20,11 +20,6 @@ async function getAllDesignations(query: string = "") {
     }
   );
 
-  if (!res.ok) {
-    // This will activate the closest `error.js` Error Boundary
-    throw new Error("Fail to fetch data");
-  }
-
   return res.json();
 }
 
@@ -34,9 +29,6 @@ async function getSingleDesignation(id: any) {
     next: { tags: ["designation"] },
   });
 
-  if (!res.ok) {
-    throw new Error("Failed to get data");
-  }
   return res.json();
 }
 
@@ -47,10 +39,6 @@ async function updateDesignation(id: any, payload: any) {
     body: JSON.stringify(payload),
   });
 
-  if (!res.ok) {
-    throw new Error("Failed to update data");
-  }
-
   return res.json();
 }
 
@@ -59,9 +47,6 @@ async function deleteDesignation(id: any) {
     method: "DELETE",
   });
 
-  if (!res.ok) {
-    throw new Error("Failed to delete data");
-  }
   return res.json();
 }
 

@@ -1,7 +1,8 @@
 import Link from 'next/link';
 import React from 'react'
-import EmployeeAction from './component/EmployeeTableAction';
+import EmployeeAction from './components/EmployeeTableAction';
 import getEmployees from '@/services/employee/getEmployees';
+import EmployeeTableAction from './components/EmployeeTableAction';
 
 
 export default async function EmployeePage() {
@@ -35,7 +36,7 @@ export default async function EmployeePage() {
                                         <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{employee?.name}</td>
                                         <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{employee?.designation?.name}</td>
                                         <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{employee?.department?.name}</td>
-                                        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900"><EmployeeAction id={employee._id} /></td>
+                                        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900"><EmployeeTableAction id={employee._id} /></td>
                                     </tr>)
                                 }
                             </tbody>

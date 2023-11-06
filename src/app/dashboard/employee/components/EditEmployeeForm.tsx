@@ -27,7 +27,7 @@ export default function EditEmployeeForm({ designations, departments, employee }
                 alert('something went wrong');
                 return false;
             }
-            await revalidateByTag('/dashboard/employee');
+            await revalidateByTag('employee');
             router.push('/dashboard/employee')
         } catch (e) {
             return { message: 'Failed to create' }
