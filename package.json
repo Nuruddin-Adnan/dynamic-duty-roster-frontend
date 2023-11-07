@@ -10,7 +10,9 @@
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.7",
+    "@types/core-js": "^2.5.8",
     "@types/jsonwebtoken": "^9.0.4",
+    "core-js": "^3.33.2",
     "jsonwebtoken": "^9.0.2",
     "next": "14.0.1",
     "react": "^18",

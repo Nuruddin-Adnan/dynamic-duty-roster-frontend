@@ -31,8 +31,8 @@ export default async function WorkstationPage() {
                             <tbody className="bg-white divide-y divide-gray-200">
                                 {
                                     workstations && workstations.map((workstation: any) => <tr key={workstation._id}>
-                                        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{workstation?.name}</td>
-                                        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900"><WorkstationTableAction id={workstation._id} /></td>
+                                        <td className="px-6 py-2 whitespace-nowrap text-base text-gray-900">{workstation?.name}</td>
+                                        <td className="px-6 py-2 whitespace-nowrap text-base text-gray-900"><WorkstationTableAction id={workstation._id} /></td>
                                     </tr>)
                                 }
                             </tbody>

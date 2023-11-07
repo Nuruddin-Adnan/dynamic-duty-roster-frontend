@@ -1,12 +1,22 @@
 'use client'
-import React from 'react'
+import React, { useState } from 'react'
 import revalidateByTag from '@/services/revalidateByTag'
 import { useRouter } from 'next/navigation';
 import { employeeRequiredService } from '@/services/employeeRequired/employeeRequired.service';
+import Loading from '@/components/Loading';
 
 export default function CreateEmployeeRequiredForm({ designations, workstations }: { designations: any, workstations: any }) {
+    const [loading, setLoading] = useState(false)
+
     const router = useRouter();
+
+    if (loading) {
+        return <Loading />
+    }
+
     async function action(formData: FormData) {
+
+
 
         const countValue = formData.get('count');
         if (countValue === null) {
@@ -46,14 +56,18 @@ export default function CreateEmployeeRequiredForm({ designations, workstations 
         }
 
         try {
+            setLoading(true)
             const result = await employeeRequiredService.createEmployeeRequired(FormDataObject)
             if (result.success === false) {
                 alert('something went wrong');
+                setLoading(false)
                 return false;
             }
             await revalidateByTag('employee-required');
+            setLoading(false)
             router.push('/dashboard/employee-required')
         } catch (e) {
+            setLoading(false)
             return { message: 'Failed to create' }
         }
     }

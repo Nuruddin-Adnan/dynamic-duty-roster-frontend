@@ -1,0 +1,134 @@
+{
+  "monday": [
+    {
+      "weekday": "monday",
+      "employees": ["Rakibul Ismal", "Mahmudul Hasan"],
+      "workstation": "Sample collection",
+      "count": 2
+    },
+    {
+      "weekday": "monday",
+      "employees": ["Farhana Mitu", "Momena"],
+      "workstation": "Indoor collection",
+      "count": 2
+    }
+  ],
+  "saturday": [
+    {
+      "weekday": "saturday",
+      "employees": ["Rakibul Ismal", "Mahmudul Hasan"],
+      "workstation": "Sample collection",
+      "count": 2
+    },
+    {
+      "weekday": "saturday",
+      "employees": ["Sobnom Mostary", "Alamgir Hossain"],
+      "workstation": "CBC with ESR",
+      "count": 2
+    },
+    {
+      "weekday": "saturday",
+      "employees": ["Farhana Mitu", "Momena"],
+      "workstation": "Clinical Pathology",
+      "count": 2
+    },
+    {
+      "weekday": "saturday",
+      "employees": ["Fatema Khatun"],
+      "workstation": "Urine, PT, APTT",
+      "count": 1
+    },
+    {
+      "weekday": "saturday",
+      "employees": ["Rasel", "Arpon"],
+      "workstation": "Indoor collection",
+      "count": 2
+    }
+  ],
+  "sunday": [
+    {
+      "weekday": "sunday",
+      "employees": ["Rakibul Ismal", "Mahmudul Hasan"],
+      "workstation": "Sample collection",
+      "count": 2
+    },
+    {
+      "weekday": "sunday",
+      "employees": ["Farhana Mitu", "Momena"],
+      "workstation": "Indoor collection",
+      "count": 2
+    },
+    {
+      "weekday": "sunday",
+      "employees": ["Sobnom Mostary"],
+      "workstation": "CBC with ESR",
+      "count": 1
+    },
+    {
+      "weekday": "sunday",
+      "employees": ["Md. Nuruddin Adnan"],
+      "workstation": "Histopathology",
+      "count": 1
+    }
+  ],
+  "thursday": [
+    {
+      "weekday": "thursday",
+      "employees": ["Sobnom Mostary", "Alamgir Hossain"],
+      "workstation": "CBC with ESR",
+      "count": 2
+    },
+    {
+      "weekday": "thursday",
+      "employees": ["Fatema Khatun"],
+      "workstation": "Urine, PT, APTT",
+      "count": 1
+    },
+    {
+      "weekday": "thursday",
+      "employees": ["Md. Nuruddin Adnan"],
+      "workstation": "Histopathology",
+      "count": 1
+    },
+    {
+      "weekday": "thursday",
+      "employees": ["Rakibul Ismal", "Mahmudul Hasan"],
+      "workstation": "Sample collection",
+      "count": 2
+    },
+    {
+      "weekday": "thursday",
+      "employees": ["Farhana Mitu", "Momena"],
+      "workstation": "Indoor collection",
+      "count": 2
+    }
+  ],
+  "tuesday": [
+    {
+      "weekday": "tuesday",
+      "employees": ["Rakibul Ismal", "Mahmudul Hasan"],
+      "workstation": "Sample collection",
+      "count": 2
+    }
+  ],
+  "wednesday": [
+    {
+      "weekday": "wednesday",
+      "employees": ["Rakibul Ismal", "Mahmudul Hasan"],
+      "workstation": "Sample collection",
+      "count": 2
+    },
+    {
+      "weekday": "wednesday",
+      "employees": ["Farhana Mitu", "Momena"],
+      "workstation": "Clinical Pathology",
+      "count": 2
+    },
+    {
+      "weekday": "wednesday",
+      "employees": ["Rasel", "Arpon"],
+      "workstation": "Indoor collection",
+      "count": 2
+    }
+  ]
+}

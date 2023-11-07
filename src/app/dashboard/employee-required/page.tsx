@@ -2,11 +2,15 @@ import Link from 'next/link';
 import React from 'react'
 import { employeeRequiredService } from '@/services/employeeRequired/employeeRequired.service';
 import EmployeeRequiredTableAction from './components/EmployeeRequiredTableAction';
+import 'core-js/actual';
 
 
 export default async function EmployeeRequiredPage() {
 
     const { data: employeeRequireds } = await employeeRequiredService.getAllEmployeeRequireds('sort=weekday');
+
+    const employeeRequiredGrouped = employeeRequireds.group((emp: any) => emp.weekday)
+
     return (
         <div>
             <div className="container mx-auto">
@@ -24,27 +28,44 @@ export default async function EmployeeRequiredPage() {
                         <table className="bg-gray-50 w-full">
                             <thead>
                                 <tr>
-                                    <th className="px-6 py-3 text-left text-sm font-medium text-gray-500 uppercase tracking-wider">Weekday</th>
-                                    <th className="px-6 py-3 text-left text-sm font-medium text-gray-500 uppercase tracking-wider">Workstation</th>
-                                    <th className="px-6 py-3 text-left text-sm font-medium text-gray-500 uppercase tracking-wider">Designation</th>
-                                    <th className="px-6 py-3 text-left text-sm font-medium text-gray-500 uppercase tracking-wider">Required Number</th>
+                                    <th></th>
                                 </tr>
                             </thead>
+
+
+
+
                             <tbody className="bg-white divide-y divide-gray-200">
                                 {
-                                    employeeRequireds && employeeRequireds.map((employeeRequired: any) => <tr key={employeeRequired._id}>
-                                        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900 capitalize">{employeeRequired?.weekday}</td>
-                                        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{employeeRequired?.workstation?.name}</td>
-                                        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{employeeRequired?.designation?.name}</td>
-                                        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{employeeRequired?.count}</td>
-                                        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900"><EmployeeRequiredTableAction id={employeeRequired._id} /></td>
+                                    employeeRequiredGrouped && Object.keys(employeeRequiredGrouped).map((weekday: any) => <tr key={weekday}>
+                                        <td className='px-6 py-4 whitespace-nowrap  text-gray-900  font-medium capitalize' colSpan={50}>
+                                            {weekday}
+                                            <table>
+                                                <thead>
+                                                    <tr>
+                                                        <td className="px-6 py-2 text-left text-sm font-medium text-gray-500 uppercase tracking-wider">Workstation</td>
+                                                        <td className="px-6 py-2 text-left text-sm font-medium text-gray-500 uppercase tracking-wider">Designation</td>
+                                                        <td className="px-6 py-2 text-left text-sm font-medium text-gray-500 uppercase tracking-wider">Required Number</td>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    {
+                                                        employeeRequiredGrouped[weekday].map((employeeRequired: any) => <tr key={employeeRequired?._id}>
+                                                            <td className="px-6 py-[2px] whitespace-nowrap text-sm text-gray-900 capitalize">{employeeRequired?.workstation?.name}</td>
+                                                            <td className="px-6 py-[2px] whitespace-nowrap text-sm text-gray-900 capitalize">{employeeRequired?.designation?.name}</td>
+                                                            <td className="px-6 py-[2px] whitespace-nowrap text-sm text-gray-900 capitalize">{employeeRequired?.count}</td>
+                                                            <td className="px-6 py-[2px] whitespace-nowrap text-sm text-gray-900"><EmployeeRequiredTableAction id={employeeRequired._id} /></td>
+                                                        </tr>)
+                                                    }
+                                                </tbody>
+                                            </table>
+                                        </td>
                                     </tr>)
                                 }
                             </tbody>
                         </table>
                     </div>
                 </div>
-
             </div>
         </div>
     )

@@ -6,7 +6,7 @@ import EmployeeTableAction from './components/EmployeeTableAction';
 
 export default async function EmployeePage() {
 
-    const { data: employees } = await getEmployees();
+    const { data: employees } = await getEmployees('sort=designation');
     return (
         <div>
             <div className="container mx-auto">
@@ -32,10 +32,10 @@ export default async function EmployeePage() {
                             <tbody className="bg-white divide-y divide-gray-200">
                                 {
                                     employees && employees.map((employee: any) => <tr key={employee._id}>
-                                        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{employee?.name}</td>
-                                        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{employee?.designation?.name}</td>
-                                        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{employee?.department?.name}</td>
-                                        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900"><EmployeeTableAction id={employee._id} /></td>
+                                        <td className="px-6 py-2 whitespace-nowrap text-base text-gray-900">{employee?.name}</td>
+                                        <td className="px-6 py-2 whitespace-nowrap text-base text-gray-900">{employee?.designation?.name}</td>
+                                        <td className="px-6 py-2 whitespace-nowrap text-base text-gray-900">{employee?.department?.name}</td>
+                                        <td className="px-6 py-2 whitespace-nowrap text-base text-gray-900"><EmployeeTableAction id={employee._id} /></td>
                                     </tr>)
                                 }
                             </tbody>

@@ -30,8 +30,8 @@ export default async function DesignationPage() {
                             <tbody className="bg-white divide-y divide-gray-200">
                                 {
                                     designations && designations.map((designation: any) => <tr key={designation._id}>
-                                        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{designation?.name}</td>
-                                        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900"><DesignationTableAction id={designation._id} /></td>
+                                        <td className="px-6 py-2 whitespace-nowrap text-base text-gray-900">{designation?.name}</td>
+                                        <td className="px-6 py-2 whitespace-nowrap text-base text-gray-900"><DesignationTableAction id={designation._id} /></td>
                                     </tr>)
                                 }
                             </tbody>

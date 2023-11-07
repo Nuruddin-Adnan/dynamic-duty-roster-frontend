@@ -5,9 +5,6 @@ import EditDepartmentForm from '../components/EditDepartmentForm';
 export default async function EditDepartment({ params }: { params: { id: string } }) {
   const { data: department } = await departmentService.getSingleDepartment(params.id);
 
-  console.log(department);
-
-
   return (
     <div className="container mx-auto">
       <div className="rounded overflow-hidden shadow-lg max-w-lg">

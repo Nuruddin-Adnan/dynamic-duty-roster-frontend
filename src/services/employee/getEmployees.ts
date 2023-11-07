@@ -1,6 +1,6 @@
-export default async function getEmployees() {
+export default async function getEmployees(query: string = "") {
   const res = await fetch(
-    "https://dynamic-duty-roster-backend.vercel.app/api/v1/employees",
+    `https://dynamic-duty-roster-backend.vercel.app/api/v1/employees?${query}`,
     {
       cache: "no-store",
       next: { tags: ["employee"] },

@@ -1,11 +1,14 @@
 'use client'
-import React from 'react'
+import React, { useState } from 'react'
 import revalidateByTag from '@/services/revalidateByTag'
 import { useRouter } from 'next/navigation';
 import { employeeRequiredService } from '@/services/employeeRequired/employeeRequired.service';
+import LoadingComponent from '@/components/Loading';
 
 export default function EditEmployeeRequiredForm({ designations, workstations, employeeRequired }: { designations: any, workstations: any, employeeRequired: any }) {
+    const [loading, setLoading] = useState(false)
     const router = useRouter();
+
     async function action(formData: FormData) {
 
         const countValue = formData.get('count');
@@ -47,25 +50,33 @@ export default function EditEmployeeRequiredForm({ designations, workstations, e
 
 
         try {
+            setLoading(true)
             const result = await employeeRequiredService.updateEmployeeRequired(employeeRequired._id, FormDataObject)
 
             if (result.success === false) {
                 alert('something went wrong');
+                setLoading(false)
                 return false;
             }
 
             await revalidateByTag('employee-required');
+            setLoading(false)
             router.push('/dashboard/employee-required')
         } catch (e) {
+            setLoading(false)
             return { message: 'Failed to create' }
         }
+    }
+
+    if (loading) {
+        return <LoadingComponent />
     }
 
     return (
         <form action={action}>
             <div className="mb-4">
                 <label className="block text-gray-600">Week Day</label>
-                <select name="weekday" className="w-full p-2 border rounded-md" defaultValue={employeeRequired.weekday}>
+                <select name="weekday" className="w-full p-2 border rounded-md" defaultValue={employeeRequired?.weekday}>
                     <option value='saturday'>Saturday</option>
                     <option value='sunday'>Sunday</option>
                     <option value='monday'>Monday</option>
@@ -77,7 +88,7 @@ export default function EditEmployeeRequiredForm({ designations, workstations, e
             </div>
             <div className="mb-4">
                 <label className="block text-gray-600">Workstation</label>
-                <select name="workstation" className="w-full p-2 border rounded-md" defaultValue={employeeRequired?.workstations?._id}>
+                <select name="workstation" className="w-full p-2 border rounded-md" defaultValue={employeeRequired?.workstation?._id}>
                     {
                         workstations && workstations.map((workstation: any) => <option key={workstation?._id} value={workstation?._id}>{workstation?.name}</option>)
                     }
@@ -96,7 +107,7 @@ export default function EditEmployeeRequiredForm({ designations, workstations, e
                 <input type="number" name="count" className="w-full p-2 border rounded-md" defaultValue={employeeRequired?.count} />
             </div>
 
-            <button type="submit" className="bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600">Submit</button>
+            <button type="submit" className="bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600">Update</button>
         </form>
     )
 }

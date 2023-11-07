@@ -30,8 +30,8 @@ export default async function DepartmentPage() {
                             <tbody className="bg-white divide-y divide-gray-200">
                                 {
                                     departments && departments.map((department: any) => <tr key={department._id}>
-                                        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{department?.name}</td>
-                                        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900"><DepartmetTableAction id={department._id} /></td>
+                                        <td className="px-6 py-2 whitespace-nowrap text-base text-gray-900">{department?.name}</td>
+                                        <td className="px-6 py-2 whitespace-nowrap text-base text-gray-900"><DepartmetTableAction id={department._id} /></td>
                                     </tr>)
                                 }
                             </tbody>
