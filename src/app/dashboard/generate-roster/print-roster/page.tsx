@@ -29,6 +29,7 @@ export default function PrintRoster() {
             </button>
           </div>
         </div>
+        {/* <PrintRosterTable ref={componentRef} /> */}
         <PrintRosterTable />
       </div>
     </div>
