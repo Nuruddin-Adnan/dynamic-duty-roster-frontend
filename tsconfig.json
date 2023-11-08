@@ -27,7 +27,8 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "src/hooks"
+    "src/hooks",
+    "src/app/dashboard/generate-roster/print-roster/page.tsx"
   ],
   "exclude": ["node_modules"]
 }

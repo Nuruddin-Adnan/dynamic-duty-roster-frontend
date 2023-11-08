@@ -1,14 +1,14 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 
 const initialState: any = {
-  rosterData: [],
+  rosterData: null,
 };
 
 const rosterSlice = createSlice({
   name: "roster",
   initialState,
   reducers: {
-    setRosterData: (state, action: PayloadAction<[]>) => {
+    setRosterData: (state, action: PayloadAction<any>) => {
       state.rosterData = action.payload;
     },
   },

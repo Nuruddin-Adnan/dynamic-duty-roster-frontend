@@ -3,9 +3,15 @@
 import React, { useState } from 'react'
 import 'core-js/actual';
 import useGenerateRoster from '@/hooks/useGenerateRoster';
+import { useAppDispatch } from '@/redux/hook';
+import { setRosterData } from '@/redux/features/roster/rosterSlice';
 import * as _ from "lodash";
+import Link from 'next/link';
+import { AiOutlineRedo, AiOutlinePrinter } from 'react-icons/ai';
 
 export default function RosterTable({ employees, employeeRequired }: { employees: any, employeeRequired: any }) {
+
+    const dispatch = useAppDispatch();
 
     const [employeesState, setEmployeesState] = useState<any>(employees);
 
@@ -24,7 +30,11 @@ export default function RosterTable({ employees, employeeRequired }: { employees
     }
 
 
-    const dutyRoster = useGenerateRoster(scheduleData, employeeData)
+    const dutyRoster = useGenerateRoster(scheduleData, employeeData);
+
+    if (dutyRoster) {
+        dispatch(setRosterData(dutyRoster))
+    }
 
 
     return (
@@ -32,12 +42,20 @@ export default function RosterTable({ employees, employeeRequired }: { employees
             <div className="rounded overflow-hidden shadow-lg">
                 <div className="bg-gray-200 py-2 px-4 flex items-center justify-between">
                     <span className='text-gray-700 font-bold text-xl'>Dynamic Dury Roster</span>
-                    <button onClick={handleRegenerateRoster} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded flex items-center">
-                        <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4v16m8-8H4"></path>
-                        </svg>
-                        Regenerate
-                    </button>
+                    <div className='flex'>
+                        <Link href='/dashboard/generate-roster/print-roster' className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded flex items-center me-4">
+                            <span className='text-lg me-2'>
+                                <AiOutlinePrinter />
+                            </span>
+                            Print
+                        </Link>
+                        <button onClick={handleRegenerateRoster} className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded flex items-center">
+                            <span className='text-lg me-2'>
+                                <AiOutlineRedo />
+                            </span>
+                            Regenerate
+                        </button>
+                    </div>
                 </div>
                 <div className="px-6 py-4">
                     <table className="bg-gray-50 w-full">
