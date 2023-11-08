@@ -15,8 +15,7 @@ async function getAllDepartments(query: string = "") {
   const res = await fetch(
     `https://dynamic-duty-roster-backend.vercel.app/api/v1/departments/?${query}`,
     {
-      cache: "no-store",
-      next: { tags: ["employee"] },
+      next: { revalidate: 30, tags: ["employee"] },
     }
   );
 

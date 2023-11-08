@@ -6,14 +6,13 @@ export const api = createApi({
     baseUrl: "https://dynamic-duty-roster-backend.vercel.app/api/v1",
     prepareHeaders: (headers) => {
       // Get the access token from sessionStorage
-      const authData = sessionStorage.getItem("authData");
-      if (authData) {
-        const token = JSON.parse(authData).accessToken;
-        headers.set("Authorization", token);
+      const accessToken = sessionStorage.getItem("accessToken");
+      if (accessToken) {
+        headers.set("Authorization", accessToken);
       }
       return headers;
     },
   }),
-  tagTypes: ["registrations"],
+  tagTypes: ["yourtags"],
   endpoints: () => ({}),
 });

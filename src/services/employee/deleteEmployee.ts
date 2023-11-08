@@ -6,8 +6,5 @@ export default async function deleteEmployee(id: any) {
     }
   );
 
-  if (!res.ok) {
-    throw new Error("Failed to delete data");
-  }
   return res.json();
 }

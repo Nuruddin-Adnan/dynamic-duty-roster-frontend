@@ -40,7 +40,7 @@ export default function CreateEmployeeForm({ designations, departments }: { desi
             </div>
             <div className="mb-4">
                 <label className="block text-gray-600">Designation</label>
-                <select id="designation" name="designation" className="w-full p-2 border rounded-md">
+                <select name="designation" className="w-full p-2 border rounded-md">
                     {
                         designations && designations.map((designation: any) => <option key={designation?._id} value={designation?._id}>{designation?.name}</option>)
                     }

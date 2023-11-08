@@ -15,8 +15,7 @@ async function getAllDesignations(query: string = "") {
   const res = await fetch(
     `https://dynamic-duty-roster-backend.vercel.app/api/v1/designations/?${query}`,
     {
-      cache: "no-store",
-      next: { tags: ["designation"] },
+      next: { revalidate: 30, tags: ["designation"] },
     }
   );
 

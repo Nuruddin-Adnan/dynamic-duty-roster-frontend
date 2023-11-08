@@ -1,3 +1,5 @@
+import * as _ from "lodash";
+
 export default function generateRoster(scheduleData: any, employeeData: any) {
   const dutyRoster: any = {};
 
@@ -10,7 +12,7 @@ export default function generateRoster(scheduleData: any, employeeData: any) {
       const designation = entry?.designation?.name;
       const count = entry?.count;
       const workstation = entry?.workstation?.name;
-      const employees = [...employeeData[designation]] || [];
+      const employees = [..._.shuffle(employeeData[designation])] || [];
       const employeesForDay = [];
 
       for (let i = 0; i < count; i++) {

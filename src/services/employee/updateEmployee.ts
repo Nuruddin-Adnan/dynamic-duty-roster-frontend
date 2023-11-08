@@ -8,9 +8,5 @@ export default async function updateEmployee(id: any, payload: any) {
     }
   );
 
-  if (!res.ok) {
-    throw new Error("Failed to update data");
-  }
-
   return res.json();
 }

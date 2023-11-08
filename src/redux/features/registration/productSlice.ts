@@ -1,27 +1,27 @@
-import { PayloadAction, createSlice } from "@reduxjs/toolkit";
+// import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 
-type IProduct = {
-  status: boolean;
-  priceRange: number;
-};
+// type IProduct = {
+//   status: boolean;
+//   priceRange: number;
+// };
 
-const initialState: IProduct = {
-  status: true,
-  priceRange: 150,
-};
+// const initialState: IProduct = {
+//   status: true,
+//   priceRange: 150,
+// };
 
-const productSlice = createSlice({
-  name: "product",
-  initialState,
-  reducers: {
-    toggleStatus: (state) => {
-      state.status = !state.status;
-    },
-    setPriceRange: (state, action: PayloadAction<number>) => {
-      state.priceRange = action.payload;
-    },
-  },
-});
+// const productSlice = createSlice({
+//   name: "product",
+//   initialState,
+//   reducers: {
+//     toggleStatus: (state) => {
+//       state.status = !state.status;
+//     },
+//     setPriceRange: (state, action: PayloadAction<number>) => {
+//       state.priceRange = action.payload;
+//     },
+//   },
+// });
 
-export const { toggleStatus, setPriceRange } = productSlice.actions;
-export default productSlice.reducer;
+// export const { toggleStatus, setPriceRange } = productSlice.actions;
+// export default productSlice.reducer;

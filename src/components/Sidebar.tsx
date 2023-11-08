@@ -32,7 +32,7 @@ export default function Sidebar() {
                     <li>
                         <Link href="/dashboard/department" className={`link flex items-center py-2 px-4 hover:bg-blue-600 ${pathname === '/dashboard/department' ? 'active' : ''}`}>
                             <span className="mr-2"><AiOutlineBranches /></span>
-                            Deparatment
+                            Department
                         </Link>
                     </li>
                     <li>
