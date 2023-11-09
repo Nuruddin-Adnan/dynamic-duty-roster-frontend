@@ -2,14 +2,18 @@
 
 import React, { useRef } from "react";
 import { useReactToPrint } from "react-to-print";
-import PrintRosterTable from "./components/PrintRosterTable";
 import { AiOutlinePrinter } from "react-icons/ai";
+import PrintRosterTable from "./components/PrintRosterTable";
 
-export default function PrintRoster() {
+export default function PrintRosterPage() {
+
   const componentRef = useRef(null);
+
   const handlePrint = useReactToPrint({
     content: () => componentRef.current,
   });
+
+
   return (
     <div className="container mx-auto">
       <div className="rounded overflow-hidden shadow-lg">
@@ -29,8 +33,11 @@ export default function PrintRoster() {
             </button>
           </div>
         </div>
-        {/* <PrintRosterTable ref={componentRef} /> */}
-        <PrintRosterTable />
+        <div className="bg-white py-10" ref={componentRef}>
+          <div className="text-center text-2xl font-bold font-serif">Duty Roster</div>
+          <div className="text-center text-2xl font-bold font-serif">Department of Neuropathology</div>
+          <PrintRosterTable />
+        </div>
       </div>
     </div>
   );

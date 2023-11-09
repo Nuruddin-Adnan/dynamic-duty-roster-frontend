@@ -73,66 +73,66 @@ export default function PrintRosterTable() {
     return (
 
         <div className="px-6 py-4 bg-white">
-            <table contentEditable={true} className='w-full'>
+            <table contentEditable={true} className='w-full font-serif'>
                 <thead>
                     <tr>
-                        <th className='px-2 py-3 text-left text-sm font-medium text-gray-500 print:text-black uppercase tracking-wider'>Day</th>
+                        <th className='px-2 py-3 text-left text-xs font-bold text-gray-500 print:text-black capitalize tracking-wider border border-black'>Day</th>
                         {
-                            availableWorkstation.map((item: any, index: number) => <th className='px-2 py-3 text-left text-sm font-medium text-gray-500 print:text-black uppercase tracking-wider' key={index}>{item}</th>)
+                            availableWorkstation.map((item: any, index: number) => <th className='px-2 py-3 text-left text-xs font-bold text-gray-500 print:text-black capitalize tracking-wider border border-black' key={index}>{item}</th>)
                         }
                     </tr>
                 </thead>
                 <tbody>
                     {
                         availableWeekDay.includes('saturday') && <tr>
-                            <th className="px-2 py-2 text-sm text-gray-900 print:text-black capitalize text-start">Saturday</th>
+                            <th className="px-2 py-2 text-xs text-gray-900 print:text-black capitalize text-start border border-black">Saturday</th>
                             {
-                                availableWorkstation.map((item: any, index: number) => <td key={index} className="px-2 py-[2px] text-sm text-gray-900 print:text-black capitalize">{saturdayGroupByWorkstaion[item] ? saturdayGroupByWorkstaion[item].join(', ') : " "}</td>)
+                                availableWorkstation.map((item: any, index: number) => <td key={index} className="px-2 py-[2px] text-sm text-gray-900 print:text-black capitalize border border-black">{saturdayGroupByWorkstaion[item] ? saturdayGroupByWorkstaion[item].join(', ') : " "}</td>)
                             }
                         </tr>
                     }
 
                     {
                         availableWeekDay.includes('sunday') && <tr>
-                            <th className="px-2 py-2 text-sm text-gray-900 print:text-black capitalize text-start">Sunday</th>
+                            <th className="px-2 py-2 text-xs text-gray-900 print:text-black capitalize text-start border border-black">Sunday</th>
                             {
-                                availableWorkstation.map((item: any, index: number) => <td key={index} className="px-2 py-[2px] text-sm text-gray-900 print:text-black capitalize">{sundayGroupByWorkstaion[item] ? sundayGroupByWorkstaion[item].join(', ') : " "}</td>)
+                                availableWorkstation.map((item: any, index: number) => <td key={index} className="px-2 py-[2px] text-sm text-gray-900 print:text-black capitalize border border-black">{sundayGroupByWorkstaion[item] ? sundayGroupByWorkstaion[item].join(', ') : " "}</td>)
                             }
                         </tr>
                     }
 
                     {
                         availableWeekDay.includes('monday') && <tr>
-                            <th className="px-2 py-2 text-sm text-gray-900 print:text-black capitalize text-start">Monday</th>
+                            <th className="px-2 py-2 text-xs text-gray-900 print:text-black capitalize text-start border border-black">Monday</th>
                             {
-                                availableWorkstation.map((item: any, index: number) => <td key={index} className="px-2 py-[2px] text-sm text-gray-900 print:text-black capitalize">{mondayGroupByWorkstaion[item] ? mondayGroupByWorkstaion[item].join(', ') : " "}</td>)
+                                availableWorkstation.map((item: any, index: number) => <td key={index} className="px-2 py-[2px] text-sm text-gray-900 print:text-black capitalize border border-black">{mondayGroupByWorkstaion[item] ? mondayGroupByWorkstaion[item].join(', ') : " "}</td>)
                             }
                         </tr>
                     }
 
                     {
                         availableWeekDay.includes('tuesday') && <tr>
-                            <th className="px-2 py-2 text-sm text-gray-900 print:text-black capitalize text-start">Tuesday</th>
+                            <th className="px-2 py-2 text-xs text-gray-900 print:text-black capitalize text-start border border-black">Tuesday</th>
                             {
-                                availableWorkstation.map((item: any, index: number) => <td key={index} className="px-2 py-[2px] text-sm text-gray-900 print:text-black capitalize">{tuesdayGroupByWorkstaion[item] ? tuesdayGroupByWorkstaion[item].join(', ') : " "}</td>)
+                                availableWorkstation.map((item: any, index: number) => <td key={index} className="px-2 py-[2px] text-sm text-gray-900 print:text-black capitalize border border-black">{tuesdayGroupByWorkstaion[item] ? tuesdayGroupByWorkstaion[item].join(', ') : " "}</td>)
                             }
                         </tr>
                     }
 
                     {
                         availableWeekDay.includes('wednesday') && <tr>
-                            <th className="px-2 py-2 text-sm text-gray-900 print:text-black capitalize text-start">Wednesday</th>
+                            <th className="px-2 py-2 text-xs text-gray-900 print:text-black capitalize text-start border border-black">Wednesday</th>
                             {
-                                availableWorkstation.map((item: any, index: number) => <td key={index} className="px-2 py-[2px] text-sm text-gray-900 print:text-black capitalize">{wednesdayGroupByWorkstaion[item] ? wednesdayGroupByWorkstaion[item].join(', ') : " "}</td>)
+                                availableWorkstation.map((item: any, index: number) => <td key={index} className="px-2 py-[2px] text-sm text-gray-900 print:text-black capitalize border border-black">{wednesdayGroupByWorkstaion[item] ? wednesdayGroupByWorkstaion[item].join(', ') : " "}</td>)
                             }
                         </tr>
                     }
 
                     {
                         availableWeekDay.includes('thursday') && <tr>
-                            <th className="px-2 py-2 text-sm text-gray-900 print:text-black capitalize text-start">Thursday</th>
+                            <th className="px-2 py-2 text-xs text-gray-900 print:text-black capitalize text-start border border-black">Thursday</th>
                             {
-                                availableWorkstation.map((item: any, index: number) => <td key={index} className="px-2 py-[2px] text-sm text-gray-900 print:text-black capitalize">{thursdayGroupByWorkstaion[item] ? thursdayGroupByWorkstaion[item].join(', ') : " "}</td>)
+                                availableWorkstation.map((item: any, index: number) => <td key={index} className="px-2 py-[2px] text-sm text-gray-900 print:text-black capitalize border border-black">{thursdayGroupByWorkstaion[item] ? thursdayGroupByWorkstaion[item].join(', ') : " "}</td>)
                             }
                         </tr>
                     }
